@@ -7,9 +7,9 @@ url: "https://YOUR-GITHUB-USERNAME.github.io"
 baseurl: ""
 author:
   name: "Vicky Solanki"
-  github: "YOUR-GITHUB-USERNAME"
-  linkedin: "your-linkedin-id"
-  email: "your-email@example.com"
+  github: "vickysolankii"
+  linkedin: "https://www.linkedin.com/in/vickysolanki/"
+  email: "vickysolankisvce1@gmail.com"
 # ========================
 future: true
 permalink: /posts/:title/
