@@ -1,1 +1,7 @@
-
+- {key: home, title: Home, url: /, icon: "🏠"}
+- {key: troubleshooting, title: Troubleshooting, url: /troubleshooting/, icon: "🛠️", blurb: "Error codes and fixes, with cause and verification"}
+- {key: configuration, title: Configuration, url: /configuration/, icon: "⚙️", blurb: "Firewalls, users, permissions, services"}
+- {key: setup, title: Setup Guides, url: /setup/, icon: "📘", blurb: "Windows and Linux installs, step by step"}
+- {key: projects, title: Home Lab, url: /projects/, icon: "🧪", blurb: "Labs and projects with screenshots"}
+- {key: tags, title: Tags, url: /tags/, icon: "🏷️"}
+- {key: about, title: About and Resume, url: /about/, icon: "👤"}
