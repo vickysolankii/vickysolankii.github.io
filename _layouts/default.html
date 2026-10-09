@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ page.description | default: site.description | escape }}">
+<link rel="icon" href="{{ '/assets/img/avatar.svg' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+<input type="checkbox" id="nav-toggle" hidden>
+<label for="nav-toggle" class="burger" aria-label="Menu">☰</label>
+<aside class="side">
+  <img class="avatar" src="{{ '/assets/img/avatar.svg' | relative_url }}" alt="Vicky Solanki">
+  <h1>{{ site.author.name }}</h1>
+  <p class="role">{{ site.tagline }}</p>
+  <nav>
+    {% for s in site.data.sections %}
+    <a href="{{ s.url | relative_url }}" class="{% if page.url == s.url or page.category == s.key %}on{% endif %}"><span>{{ s.icon }}</span>{{ s.title }}</a>
+    {% endfor %}
+  </nav>
+  <div class="social">
+    <a href="https://github.com/{{ site.author.github }}">GitHub</a>
+    <a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a>
+    <a href="mailto:{{ site.author.email }}">Email</a>
+  </div>
+</aside>
+<main>
+  <header class="top">
+    <span class="crumb">{% if page.url == "/" %}Home{% else %}<a href="{{ '/' | relative_url }}">Home</a> / {{ page.title }}{% endif %}</span>
+    <div class="search"><input id="q" type="search" placeholder="Search posts..." autocomplete="off"><div id="results"></div></div>
+  </header>
+  <div class="content">{{ content }}</div>
+  <footer>© {{ 'now' | date: "%Y" }} {{ site.author.name }}. Notes from real troubleshooting and lab work.</footer>
+</main>
+<script>window.SEARCH_URL="{{ '/search.json' | relative_url }}";</script>
+<script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+</body>
+</html>

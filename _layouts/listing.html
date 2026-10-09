@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<h1 class="ptitle">{{ page.title }}</h1>
+<p class="sub">{{ page.intro }}</p>
+{% assign items = site.posts | where: "category", page.category %}
+<div class="grid">
+{% for p in items %}{% include card.html post=p %}{% else %}
+<div class="card empty"><h3>Posts coming soon</h3><p>Add a file in <code>_posts</code> with <code>category: {{ page.category }}</code>.</p></div>
+{% endfor %}
+</div>
