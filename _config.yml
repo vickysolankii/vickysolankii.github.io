@@ -1,0 +1,20 @@
+# ====== EDIT THESE ======
+title: "Vicky Solanki | IT Support Notes"
+tagline: "Technical Support Engineer | Windows | Linux | Networking"
+description: "Troubleshooting fixes, configuration guides and setup guides for Windows and Linux, written by Vicky Solanki."
+# For a user site (repo named USERNAME.github.io) keep baseurl empty.
+url: "https://YOUR-GITHUB-USERNAME.github.io"
+baseurl: ""
+author:
+  name: "Vicky Solanki"
+  github: "YOUR-GITHUB-USERNAME"
+  linkedin: "your-linkedin-id"
+  email: "your-email@example.com"
+# ========================
+future: true
+permalink: /posts/:title/
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+exclude: [README.md, Gemfile, Gemfile.lock]

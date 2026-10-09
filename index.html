@@ -1,0 +1,19 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <h1>IT support fixes that actually work.</h1>
+  <p>Hi, I'm {{ site.author.name }}, a technical support engineer. This is where I document the problems I solve: what broke, why, how I fixed it and how I confirmed it. Windows, Linux and networking.</p>
+</section>
+{% for s in site.data.sections %}{% if s.blurb %}
+{% assign items = site.posts | where: "category", s.key %}
+<section class="block">
+  <div class="bhead"><h2>{{ s.icon }} {{ s.title }} <small>{{ s.blurb }}</small></h2><a href="{{ s.url | relative_url }}">See all →</a></div>
+  <div class="grid">
+  {% for p in items limit:3 %}{% include card.html post=p %}{% else %}
+  <div class="card empty"><h3>Coming soon</h3><p>{{ s.blurb }}</p></div>
+  {% endfor %}
+  </div>
+</section>
+{% endif %}{% endfor %}
