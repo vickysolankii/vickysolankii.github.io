@@ -5,7 +5,6 @@ category: troubleshooting
 tags: [windows, performance, troubleshooting, registry]
 description: "Practical fixes for a slow Windows PC: startup apps, disk cleanup, animations disables, registry tweaks, malware removal and hardware upgrades."
 ---
-Sahi baat hai. Before/after ticket-style tab hota hai jab aap koi problem create karke fix karte ho. Ye article ek **guide-style** hai: "PC slow ho to kya-kya kar sakte ho." Isliye maine before/after table aur `[x]` placeholders hata diye hain. Screenshots abhi bhi lab se lene hain, wo jagah-jagah mark kar diye hain.
 
 ---
 
