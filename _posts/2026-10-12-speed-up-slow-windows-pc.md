@@ -50,8 +50,8 @@ For a more detailed view, Microsoft's **Autoruns** (Sysinternals) shows everythi
 When the C: drive is almost full, Windows has no room for temp files and virtual memory, so everything slows down. Keep **at least 15-20% free**.
 
 - **Settings > System > Storage > Temporary files:** clear temp files and the Recycle Bin. Check carefully before deleting the Downloads folder.
-- Run **Disk Cleanup**: press `Win + R`, type `cleanmgr`, then choose "Clean up system files."
-- Delete temp files manually: press `Win + R`, type `%temp%`, and delete what you can (skip files in use).
+- Run **Disk Cleanup**: press `Win + R`, type `cleanmgr`, then choose "c: drive for Clean up system files."
+- Delete temp files manually: press `Win + R`, type `%temp%` (C:\Users\your-system-user-name\AppData\Local\Temp, and delete what you can (skip files in use).
 - Uninstall unused apps: **Settings > Apps > Installed apps**.
 - Turn on **Storage Sense** so Windows cleans up automatically.
 - Find large files with a free tool like **WizTree** or **TreeSize Free**.
@@ -103,37 +103,44 @@ Many apps keep running in the background. In **Settings > Apps > Installed apps 
 
 These tweaks give **small** improvements. Don't expect miracles.
 
+Open Command Prompt with administator
+
 **Tweak 1: Faster menu response**
-Path: `HKEY_CURRENT_USER\Control Panel\Desktop`
-Value: `MenuShowDelay` (String), default `400`, change to `100`.
+
+```reg add "HKCU\Control Panel\Desktop" /v MenuShowDelay /t REG_SZ /d 100 /f```
 Menus open with less delay.
 
 **Tweak 2: Reduce startup delay for desktop apps**
-Path: `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Serialize`
-(Create the `Serialize` key if it does not exist.)
-Value: `StartupDelayInMSec` (DWORD) = `0`
+```reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Serialize" /v StartupDelayInMSec /t REG_DWORD /d 0 /f ```
 Startup apps load without the built-in delay.
 
 **Tweak 3: Faster shutdown**
-Path: `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control`
-Value: `WaitToKillServiceTimeout` (String), default `5000`, change to `2000`.
+``` reg add "HKLM\SYSTEM\CurrentControlSet\Control" /v WaitToKillServiceTimeout /t REG_SZ /d 2000 /f ```
 Windows waits less time for services to close. Don't set it too low.
 
 **Tweak 4: Close hung apps faster**
-Path: `HKEY_CURRENT_USER\Control Panel\Desktop`
-Values: `WaitToKillAppTimeout` and `HungAppTimeout` (String). Reducing these (for example to `2000`) makes Windows end frozen apps sooner.
+``` reg add "HKCU\Control Panel\Desktop" /v WaitToKillAppTimeout /t REG_SZ /d 2000 /f```
+```reg add "HKCU\Control Panel\Desktop" /v HungAppTimeout /t REG_SZ /d 2000 /f ```
 
+**All at once**
+```
+reg add "HKCU\Control Panel\Desktop" /v MenuShowDelay /t REG_SZ /d 100 /f
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Serialize" /v StartupDelayInMSec /t REG_DWORD /d 0 /f
+reg add "HKLM\SYSTEM\CurrentControlSet\Control" /v WaitToKillServiceTimeout /t REG_SZ /d 2000 /f
+reg add "HKCU\Control Panel\Desktop" /v WaitToKillAppTimeout /t REG_SZ /d 2000 /f
+reg add "HKCU\Control Panel\Desktop" /v HungAppTimeout /t REG_SZ /d 2000 /f
+```
 Restart the PC after the changes.
 
 **Avoid "registry cleaner" and "PC booster" tools.** They promise a lot, give little, and can break things. Manual, understood changes are safer.
 
-[Screenshot: Registry Editor with a tweaked value]
+
 
 ## Part 5: Malware and System Repair
 
 ### 11. Remove malware
 Viruses, adware, and crypto miners secretly use CPU and disk. Signs include a sudden slowdown, pop-ups, a changed browser homepage, and a fan running loudly for no reason.
-
+** uninstall a recently installed program from third-party and unofficial site,if you know the problem started after the new software was installed on system**
 **Using Windows Security:** Virus & threat protection > **Quick scan**, then **Full scan** if suspicious. For stubborn malware, use **Microsoft Defender Offline scan**, which runs before Windows loads.
 
 **Using PowerShell (admin):**
