@@ -24,7 +24,9 @@ Press **Ctrl + Shift + Esc** to open Task Manager. On the **Processes** tab, cli
 - If the app is not needed, uninstall it.
 - Keep an eye on the **Performance** tab. If CPU, Memory, or Disk stays near 100% while the PC is idle, something is wrong.
 
-[Screenshot: Task Manager Processes tab sorted by Memory]
+![Opening Task Manager with the Run command](/assets/img/slow-up-pc/run-command-taskmgr.png)
+
+![Task Manager Processes tab](/assets/img/slow-up-pc/task-manager.png)
 
 ### 3. Watch for memory leaks
 A memory leak happens when a program keeps taking more RAM over time and never gives it back. You will notice an app's memory usage slowly growing the longer it stays open (browsers and some old software are common examples).
@@ -35,14 +37,14 @@ A memory leak happens when a program keeps taking more RAM over time and never g
 - For deeper checking, use **Resource Monitor** (`resmon`) or Microsoft's free **Process Explorer**.
 - In Chrome or Edge, press **Shift + Esc** to see which tab or extension is using the most memory.
 
-[Screenshot: Resource Monitor Memory tab]
+![Resource Monitor Memory tab](/assets/img/slow-up-pc/memory-resource-monitor.png)
 
 ### 4. Disable unnecessary startup programs
 Task Manager > **Startup apps** tab. Right-click apps with **High** startup impact that you don't need immediately and click **Disable**. Do not disable antivirus or Windows components.
 
 For a more detailed view, Microsoft's **Autoruns** (Sysinternals) shows everything that runs at startup, including scheduled tasks and services.
 
-[Screenshot: Startup apps tab]
+![Disabling unnecessary startup programs](/assets/img/slow-up-pc/disable-unnessary-startup-program.png)
 
 ## Part 2: Storage and Disk
 
@@ -58,8 +60,11 @@ When the C: drive is almost full, Windows has no room for temp files and virtual
 - Disable hibernation if you don't use it. This removes a large hidden file (`hiberfil.sys`). Run as admin: `powercfg -h off`
 - Move photos, videos, and big files to another drive or cloud storage.
 
-[Screenshot: Settings > Storage]
-[Screenshot: Disk Cleanup window]
+![Deleting temporary files from Settings > System > Storage](/assets/img/slow-up-pc/free-c-drive-from-setting-system-storage-temproryfile.png)
+
+![Disk Cleanup using cleanmgr](/assets/img/slow-up-pc/disk-clean-up-using-cleanmgr.png)
+
+![Deleting files from the temp folder](/assets/img/slow-up-pc/deletingfolder-tmpfiles.png)
 
 ### 6. Check disk health and errors
 A failing disk makes the whole PC slow and freezes it randomly. Run in an admin Command Prompt:
@@ -73,11 +78,16 @@ To check drive health in PowerShell (admin):
 ```
 Get-PhysicalDisk | Select FriendlyName, MediaType, HealthStatus
 ```
+![Checking disk health with chkdsk](/assets/img/slow-up-pc/check-disk-health-using-chkdsk-utility.png)
+
+![Checking disk type and health with PowerShell](/assets/img/slow-up-pc/check-disk-health-using-powerhsell-utility.png)
 
 This also shows whether the drive is an **HDD** or **SSD**. For detailed health data, **CrystalDiskInfo** is a good free tool. If it shows "Caution" or "Bad," back up your data and replace the drive.
 
 ### 7. Check virtual memory (page file)
 Windows uses part of the disk as extra memory when RAM runs out. Let Windows manage it automatically: `Win + R` > `sysdm.cpl` > Advanced > Performance Settings > Advanced > Virtual memory > **Automatically manage paging file size**. If the PC has little free disk space, this file cannot work properly.
+
+![Virtual memory settings in sysdm.cpl](/assets/img/slow-up-pc/virtual-memory-using-sysdm.cpl-utility.png)
 
 ## Part 3: Visual Effects and Settings
 
@@ -89,7 +99,7 @@ Animations, shadows, and transparency use CPU and GPU resources. This matters mo
 3. Choose **Adjust for best performance** (or Custom, keeping "Smooth edges of screen fonts" on for readable text).
 4. Also go to **Settings > Accessibility > Visual effects** and turn off **Animation effects** and **Transparency effects**.
 
-[Screenshot: Performance Options window]
+![Disabling animations in Performance Options](/assets/img/slow-up-pc/disabling-animations-for-better-performance.png)
 
 ### 9. Use a good power plan
 **Settings > System > Power & battery > Power mode.** Use **Balanced** or **Best performance** when plugged in. "Best power efficiency" can slow the CPU down.
@@ -161,7 +171,6 @@ Start-MpWDOScan
 
 Don't run several real-time antivirus programs at the same time, because they conflict and slow the PC down.
 
-[Screenshot: Windows Security scan page]
 
 ### 12. Repair corrupted system files
 Open Command Prompt as administrator and run:
@@ -178,7 +187,7 @@ DISM /Online /Cleanup-Image /RestoreHealth
 
 Then run `sfc /scannow` again.
 
-[Screenshot: sfc scan result]
+![Result of sfc /scannow](/assets/img/slow-up-pc/sfs-scan.png)
 
 ### 13. Update Windows and drivers
 Check **Settings > Windows Update** for pending updates. Outdated drivers (graphics, storage, chipset) can cause lag. Download drivers from the manufacturer's official website, not from random driver-updater tools.
