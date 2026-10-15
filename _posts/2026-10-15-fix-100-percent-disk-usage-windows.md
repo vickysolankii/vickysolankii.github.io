@@ -7,9 +7,7 @@ tags: [windows, disk-usage, hdd, ssd, chkdsk, task-manager, it-support]
 excerpt: "Task Manager says Disk 100% and the whole laptop crawls. Here's what I checked, in what order, and what actually fixed it."
 ---
 
-*Day 2 of 15 | IT Support Notes*
 
-> **Before you publish:** swap every [square bracket] for your own real results, and delete any fix you didn't actually try. Screenshots go in `assets/images/disk-100/` with the file names used below. Then delete this note.
 
 ## Ticket Summary
 
