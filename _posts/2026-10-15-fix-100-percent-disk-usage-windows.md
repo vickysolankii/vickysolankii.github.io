@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Disk at 100% in Windows? Here's How I Tracked Down the Cause"
+title: "Disk at high ussage or 100% in Windows? Here's How I Tracked Down the Cause"
 category: troubleshooting
 tags: [windows, disk-usage, hdd, ssd, chkdsk, troubleshooting]
 description: "Practical fixes for 100% disk usage on Windows: find the process, check HDD or SSD, search indexing, startup apps, malware scan, chkdsk and virtual memory."
@@ -16,7 +16,7 @@ The user's laptop was fine for the first few minutes after startup, then it slow
 
 That mismatch is the clue. When the disk is maxed out, every program that needs to read or write something has to wait in line, so the whole machine feels frozen even though the processor is barely working.
 
-![Task Manager showing Disk at 100% before any fix](/assets/images/disk-100/01-before-task-manager.png)
+![Task Manager showing Disk at 100% before any fix](/assets/img/disk100-percent-ussage/01-before-task-manager.png)
 
 ## Diagnosis
 
@@ -28,7 +28,7 @@ I opened Task Manager with **Ctrl + Shift + Esc**, went to the **Processes** tab
 
 If you want more detail, type `resmon` in the Start menu and open the **Disk** tab. It shows which files each process is touching, which is handy when Task Manager only gives you a vague name.
 
-![Task Manager sorted by Disk column](/assets/images/disk-100/02-sorted-by-disk.png)
+![Task Manager showing Disk at 100% before any fix](/assets/img/disk100-percent-ussage/01-before-task-manager.png)
 
 Naming the culprit first matters. Without it you're just trying fixes and hoping.
 
@@ -56,7 +56,7 @@ I also opened **CrystalDiskInfo** (free) to look at the SMART data. Health statu
 
 A dying drive can look exactly like a software problem. If the status isn't good, back up your files first and forget about tweaking settings.
 
-![Drive health result](/assets/images/disk-100/03-drive-health.png)
+![Drive health check result](/assets/img/disk100-percent-ussage/check-disk-health.png)
 
 ## Solution
 
@@ -76,7 +76,9 @@ Windows Search keeps an index of your files so searches are fast. On an HDD, bui
 
 You lose a bit of search speed and gain a lot of responsiveness. It's also easy to undo: set the service back to Automatic.
 
-![Indexing Options or Services window](/assets/images/disk-100/04-search-indexing.png)
+![Indexing Options opened with control srchadmin.dll](/assets/img/disk100-percent-ussage/control-srchadmin.dll.png)
+
+![Windows Search service startup type set to Disabled](/assets/img/disk100-percent-ussage/window-search-type-disable.png)
 
 ### Fix 3: Test the SysMain service
 
@@ -106,7 +108,7 @@ Windows said it couldn't run right now and offered to schedule the scan for the 
 
 `/f` repairs file system errors and `/r` hunts for bad sectors and recovers what it can read. On a big HDD this takes a while, so start it when you don't need the laptop. On an SSD, `/f` alone is usually enough.
 
-![chkdsk result](/assets/images/disk-100/05-chkdsk-result.png)
+![chkdsk result for file system check](/assets/img/disk100-percent-ussage/using-chkdsk-utility-for-filesystem.png)
 
 ### Fix 7: Look at virtual memory
 
@@ -116,7 +118,7 @@ Windows said it couldn't run right now and offered to schedule the scan for the 
 
 When RAM fills up, Windows starts dumping data into the page file on your disk. On a machine with 4 GB of RAM this happens constantly, and it's one of the most common reasons for a pinned disk. A page file set too small by hand can make it worse.
 
-![Virtual memory settings](/assets/images/disk-100/06-virtual-memory.png)
+![Virtual memory settings window](/assets/img/disk100-percent-ussage/vertual-memory.png)
 
 ### Fix 8: Updates and drivers
 
@@ -124,7 +126,7 @@ I checked Settings > Windows Update and installed **[x]** pending updates. I als
 
 
 
-![Task Manager after the fixes](/assets/images/disk-100/07-after-task-manager.png)
+<img width="1174" height="636" alt="image" src="https://github.com/user-attachments/assets/0bd3897b-8e07-49ff-8bc0-5d3e9029ce8d" />
 
 ## Root Cause
 
