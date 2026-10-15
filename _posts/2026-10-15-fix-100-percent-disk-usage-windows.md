@@ -122,18 +122,7 @@ When RAM fills up, Windows starts dumping data into the page file on your disk. 
 
 I checked Settings > Windows Update and installed **[x]** pending updates. I also made sure the storage controller driver was current in Device Manager, under **IDE ATA/ATAPI controllers** or **Storage controllers**.
 
-## What Didn't Work
 
-[Be honest here. For example: "Disabling SysMain did nothing, so I turned it back on. The real improvement came from Fix 4 and Fix 7." Failed attempts make a write-up feel real, and they give an interviewer something to ask about.]
-
-## Result
-
-| Measurement | Before | After |
-|---|---|---|
-| Disk usage at idle | [x]% | [y]% |
-| Boot time | [x] min | [y] min |
-| High-impact startup apps | [x] | [y] |
-| Free space on C: | [x] GB | [y] GB |
 
 ![Task Manager after the fixes](/assets/images/disk-100/07-after-task-manager.png)
 
