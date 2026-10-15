@@ -1,10 +1,9 @@
 ---
 layout: post
 title: "Disk at 100% in Windows? Here's How I Tracked Down the Cause"
-date: 2026-10-15 10:00:00 +0530
-categories: [windows, troubleshooting]
-tags: [windows, disk-usage, hdd, ssd, chkdsk, task-manager, it-support]
-excerpt: "Task Manager says Disk 100% and the whole laptop crawls. Here's what I checked, in what order, and what actually fixed it."
+category: troubleshooting
+tags: [windows, disk-usage, hdd, ssd, chkdsk, troubleshooting]
+description: "Practical fixes for 100% disk usage on Windows: find the process, check HDD or SSD, search indexing, startup apps, malware scan, chkdsk and virtual memory."
 ---
 
 
