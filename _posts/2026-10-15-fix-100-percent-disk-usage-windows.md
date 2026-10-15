@@ -8,16 +8,7 @@ description: "Practical fixes for 100% disk usage on Windows: find the process, 
 
 
 
-## Ticket Summary
 
-| Field | Detail |
-|---|---|
-| Ticket ID | DISK-002 |
-| Priority | Medium. The PC works, but barely. |
-| Complaint | Laptop freezes, apps open slowly, Disk shows 100% in Task Manager |
-| OS | Windows [10/11] |
-| Drive | [HDD / SSD] |
-| Time to fix | [x minutes] |
 
 ## Problem
 
