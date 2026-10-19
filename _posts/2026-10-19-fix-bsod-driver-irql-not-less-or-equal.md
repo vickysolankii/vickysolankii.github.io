@@ -8,9 +8,7 @@ description: "A hands-on walkthrough of stop code 0xD1 on Windows 10 22H2: repro
 
 A user calls in: the PC flashed blue, restarted, and now "works fine." Most people would close the ticket here. Don't. A blue screen that disappears after a reboot is a symptom you haven't explained yet, and it usually comes back at the worst possible moment.
 
-I wanted to practice this properly, so I reproduced a driver-level crash in a VirtualBox VM and worked through it the way I would on a real ticket. Everything below comes from that lab.
 
-**Lab note:** the crash was deliberate. I triggered it with Microsoft's Sysinternals NotMyFault tool inside a VM (Windows 10 22H2, build 19045) with a snapshot taken beforehand. On a real machine you don't get to know the culprit in advance, so I've tried to keep the diagnosis honest about what each tool actually told me.
 
 ## The scenario
 
