@@ -16,7 +16,7 @@ I wanted to practice this properly, so I reproduced a driver-level crash in a Vi
 
 Stop code on screen: `DRIVER_IRQL_NOT_LESS_OR_EQUAL`. Failed module: `myfault.sys`. The screen sat at "100% complete" and then the VM restarted into the desktop.
 
-![BSOD showing DRIVER_IRQL_NOT_LESS_OR_EQUAL and myfault.sys](/assets/images/bsod-error.png)
+![BSOD showing DRIVER_IRQL_NOT_LESS_OR_EQUAL and myfault.sys](/assets/img/BSOD/bsod-error.png)
 
 That "What failed" line is worth a screenshot every time. When it names a third-party driver, you've saved yourself an hour. When it names `ntoskrnl.exe`, it tells you almost nothing, because the kernel is just where the fault surfaced.
 
@@ -34,7 +34,7 @@ In real tickets this usually points at a faulty or outdated driver, and less oft
 
 `Win + R`, then `perfmon /rel`. Find the red X for the crash date. The Problem Details view shows the bugcheck data in a compact form:
 
-![Reliability Monitor problem details showing code d1](/assets/images/perfmon-rel-problem-details.png)
+![Reliability Monitor problem details showing code d1](/assets/img/BSOD/perfmon-rel-utility-to-check-system-error.png)
 
 Code `d1`, parameters listed, OS version `10.0.19045`. Useful for confirming timing and the stop code. It does not name the driver.
 
@@ -44,11 +44,11 @@ Windows Logs, then System, filtered to Event IDs 41 and 1001.
 
 **Event ID 41 (Kernel-Power)** says the system rebooted without cleanly shutting down. It's a classic trap. Plenty of people stop at Event 41 and blame the power supply. It only tells you the shutdown was unclean, and a BSOD is one of several ways to get there.
 
-![Event ID 41 Kernel-Power](/assets/images/event-id-41.png)
+![Event ID 41 Kernel-Power](/assets/img/BSOD/event-id-41.png)
 
 **Event ID 1001 (BugCheck)** is the one with substance. It records the bugcheck code, the four parameters, and the dump file path:
 
-![Event ID 1001 BugCheck with 0xd1 and dump path](/assets/images/event-id-1001.png)
+![Event ID 1001 BugCheck with 0xd1 and dump path](/assets/img/BSOD/event-id-1001.png)
 
 ```
 Bugcheck: 0x000000d1
@@ -73,7 +73,7 @@ So: something running at `DISPATCH_LEVEL` tried to read an address it shouldn't 
 
 `C:\Windows\Minidump` held a single 274 KB `.dmp` file with the crash timestamp.
 
-![Minidump folder with the dump file](/assets/images/mini-dump.png)
+![Minidump folder with the dump file](/assets/img/BSOD/mini-dump.png)
 
 On a real ticket, this is where you'd open it in WinDbg and run `!analyze -v` to see the faulting driver and call stack. [FILL IN: if you ran WinDbg or BlueScreenView on the dump, paste the result and a screenshot here. If you didn't, delete this paragraph's second sentence and say plainly that you didn't analyze the dump.]
 
