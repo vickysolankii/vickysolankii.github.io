@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to Create a Bootable USB and Install Windows: A Step-by-Step IT Support Guide"
-category: how-to
+category: setup
 tags: [windows, bootable-usb, windows-installation, bios, uefi, rufus]
 description: "A practical guide to creating a bootable Windows USB, setting up BIOS/UEFI, doing a clean install, and fixing common errors like missing drivers and GPT/MBR issues."
 ---
