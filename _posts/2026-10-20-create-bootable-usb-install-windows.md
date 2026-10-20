@@ -38,10 +38,6 @@ This is what I'd hand to a non-technical friend.
 
 When it says the drive is ready, you're done. Easy.
 
-<!-- TODO: replace with your real screenshot -->
-![Media Creation Tool with USB flash drive selected](/assets/images/posts/bootable-usb/01-media-creation-tool-select-usb.png)
-*Media Creation Tool with USB flash drive selected.*
-
 ### Option B: Rufus
 
 I reach for Rufus when I need to control the partition scheme, or when the Media Creation Tool throws a vague error at me (it does that).
@@ -53,8 +49,7 @@ Download the ISO straight from Microsoft first. Then grab Rufus from its officia
 - **Partition scheme:** this is the one that matters.
 - **Target system:** Rufus fills this in based on your partition scheme.
 
-<!-- TODO: replace with your real screenshot -->
-![Rufus with ISO selected and GPT/UEFI partition scheme](/assets/images/posts/bootable-usb/02-rufus-settings-gpt-uefi.png)
+![Rufus with ISO selected and GPT/UEFI partition scheme](/assets/img/creating-bootable-usb/refus.png)
 *Rufus with ISO selected and GPT/UEFI partition scheme.*
 
 Here's the logic for the partition scheme:
@@ -85,8 +80,7 @@ Power on the PC and start tapping a key right away. Don't hold it. Tap it. Which
 
 If the screen flashes by too fast, check the first screen after power-on. It usually tells you the key for about two seconds.
 
-<!-- TODO: replace with your real screenshot -->
-![Manufacturer splash screen showing the BIOS and boot menu keys](/assets/images/posts/bootable-usb/03-bios-key-prompt-on-boot.png)
+![Manufacturer splash screen showing the BIOS and boot menu keys](/assets/img/creating-bootable-usb/acer-enter-setup.jpg)
 *Manufacturer splash screen showing the BIOS and boot menu keys.*
 
 If your target PC already boots into Windows, there's an easier route. Hold **Shift** while clicking Restart, then go to *Troubleshoot → Advanced options → UEFI Firmware Settings*. No frantic key tapping.
@@ -97,8 +91,7 @@ The **one-time boot menu** is the faster option. Pick your USB from the list and
 
 You may see your USB listed twice. One entry says something like "UEFI: [drive name]" and the other is just the drive name. Pick the **UEFI** one if you made a GPT drive. Pick the plain one if you made it with MBR for legacy.
 
-<!-- TODO: replace with your real screenshot -->
-![One-time boot menu showing the UEFI USB entry](/assets/images/posts/bootable-usb/04-boot-menu-uefi-usb.png)
+![One-time boot menu showing the UEFI USB entry](/assets/img/creating-bootable-usb/04-boot-menu-uefi-usb.png)
 *One-time boot menu showing the UEFI USB entry.*
 
 If you'd rather change the permanent boot order, go into the BIOS/UEFI setup, find the **Boot** tab, and move the USB device to the top. Save and exit (usually F10). Just remember to put the internal drive back first when you're done, or you'll see the "Press any key to boot from USB" prompt on every restart.
@@ -119,8 +112,7 @@ Secure Boot checks that whatever's booting is signed by a trusted source. Offici
 
 It can cause trouble in two situations. One: you used a modified ISO or a custom-built image that isn't signed. Two: you're booting something that isn't Windows. In those cases, you can disable it in the Security or Boot tab of your BIOS. Turn it back on after the install if you can.
 
-<!-- TODO: replace with your real screenshot -->
-![Secure Boot option in the BIOS Security tab](/assets/images/posts/bootable-usb/05-secure-boot-setting.png)
+![Secure Boot option in the BIOS Security tab](/assets/img/creating-bootable-usb/Disable_Secure_boot_Acer_1.jpg)
 *Secure Boot option in the BIOS Security tab.*
 
 If you see a "Secure Boot violation" message, that's your cue to either check the ISO or temporarily disable the setting.
@@ -137,8 +129,7 @@ The USB boots. You'll see the Windows Setup screen. Now we get to the part where
 4. **Choose the edition.** Pick the one you're licensed for (Home, Pro, etc.). If you pick wrong, activation will fail later.
 5. **Accept the license terms.**
 
-<!-- TODO: replace with your real screenshot -->
-![Windows Setup install now screen](/assets/images/posts/bootable-usb/06-windows-setup-install-now.png)
+![Windows Setup install now screen](/assets/img/creating-bootable-usb/2windows-setup-install-now.png)
 *Windows Setup install now screen.*
 
 ### Upgrade vs. Custom (Advanced)
@@ -149,8 +140,7 @@ This screen trips people up. You get two choices.
 
 **Custom: Install Windows only (advanced)** is the clean install. Your old OS gets removed and a fresh one goes in. Choose this one.
 
-<!-- TODO: replace with your real screenshot -->
-![Upgrade vs Custom install choice in Windows Setup](/assets/images/posts/bootable-usb/07-upgrade-vs-custom-install.png)
+![Upgrade vs Custom install choice in Windows Setup](/assets/img/creating-bootable-usb/custom-vs-upgrade.jpg)
 *Upgrade vs Custom install choice in Windows Setup.*
 
 ### Partitions and formatting
@@ -165,8 +155,7 @@ Here's how I handle it on a single-drive PC:
 
 Windows creates the partitions it needs automatically, formats them, and starts copying files.
 
-<!-- TODO: replace with your real screenshot -->
-![Partition list with a single block of unallocated space](/assets/images/posts/bootable-usb/08-partition-screen-unallocated-space.png)
+![Partition list with a single block of unallocated space](/assets/img/creating-bootable-usb/partition-selection.jpg)
 *Partition list with a single block of unallocated space.*
 
 **Be careful here.** If you've got more than one drive (say, a second HDD with your data), check which is which before deleting anything. Sizes are your best clue. When in doubt, unplug the extra drives before you start. Seriously, that's what I do.
@@ -184,8 +173,7 @@ If you want to leave other partitions alone, just delete the ones on the Windows
 5. Type `clean` then `convert gpt`.
 6. Type `exit` twice, then click Refresh in Setup.
 
-<!-- TODO: replace with your real screenshot -->
-![Diskpart commands converting the disk to GPT](/assets/images/posts/bootable-usb/09-diskpart-clean-convert-gpt.png)
+![Diskpart commands converting the disk to GPT](/assets/img/creating-bootable-usb/disk-partition-command-windows-10.png)
 *Diskpart commands converting the disk to GPT.*
 
 Double-check that disk number before you hit `clean`. There's no undo.
@@ -197,8 +185,7 @@ Double-check that disk number before you hit `clean`. There's no undo.
 - In Setup, click **Load driver**, browse to it, and pick the one it finds.
 - Your drive should appear.
 
-<!-- TODO: replace with your real screenshot -->
-![Load driver dialog in Windows Setup](/assets/images/posts/bootable-usb/10-load-driver-storage.png)
+![Load driver dialog in Windows Setup](/assets/img/creating-bootable-usb/load-driver-image.png)
 *Load driver dialog in Windows Setup.*
 
 Some BIOS setups let you switch the SATA mode from RAID/RST to AHCI. That also works, but if the old Windows was installed in RAID mode, changing it later can make that install unbootable. For a clean install, it doesn't matter.
@@ -219,17 +206,9 @@ You're at the desktop. Don't relax yet.
 
 Go to *Settings → Windows Update* and click **Check for updates**. Install everything, restart, and check again. It often takes two or three rounds. Windows Update also pulls down a lot of drivers on its own, so doing this first saves you work.
 
-<!-- TODO: replace with your real screenshot -->
-![Windows Update page after a clean install](/assets/images/posts/bootable-usb/11-windows-update-check-for-updates.png)
-*Windows Update page after a clean install.*
-
 ### 2. Check Device Manager
 
 Right-click Start and open **Device Manager**. You're looking for yellow warning triangles or items called "Unknown device." Those are missing drivers.
-
-<!-- TODO: replace with your real screenshot -->
-![Device Manager showing devices with warning triangles](/assets/images/posts/bootable-usb/12-device-manager-missing-drivers.png)
-*Device Manager showing devices with warning triangles.*
 
 Common culprits: network adapters (Wi-Fi, especially), chipset, graphics, and audio. If Wi-Fi's missing, you'll need to download the driver on another device and transfer it by USB. Get drivers from your PC manufacturer's support page when you can. For graphics, go straight to Intel, AMD, or NVIDIA.
 
@@ -237,8 +216,7 @@ Common culprits: network adapters (Wi-Fi, especially), chipset, graphics, and au
 
 Open *Settings → System → Activation*. It should say Windows is activated. If it isn't, wait until you're online and updated, then check again. If it still isn't, you may have picked the wrong edition during setup.
 
-<!-- TODO: replace with your real screenshot -->
-![Windows activation status in Settings](/assets/images/posts/bootable-usb/13-activation-status.png)
+![Windows activation status in Settings](/assets/img/creating-bootable-usb/windows-activation.jpg)
 *Windows activation status in Settings.*
 
 ### 4. Do a quick stability check
