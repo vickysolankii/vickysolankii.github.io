@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Safe Mode and System Restore in Windows: How to Boot Safely and Undo a Bad Change"
+title: "Safe Mode and System Restore: Fix Your PC Without Reinstalling Windows"
 category: troubleshooting
 tags: [windows, safe-mode, system-restore, restore-point, msconfig, troubleshooting]
 description: "A simple guide to starting Windows in Safe Mode with Shift + Restart or msconfig, creating a restore point, and using System Restore to roll your PC back to a time when it worked."
