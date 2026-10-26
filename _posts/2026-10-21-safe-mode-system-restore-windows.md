@@ -42,15 +42,15 @@ This is the easiest way, and it works when you can still reach the desktop.
    - **5** for Safe Mode with Networking (you get internet, handy for downloading a driver)
    - **6** for Safe Mode with Command Prompt
 
-![Shift + Restart option on the Start menu](/assets/images/posts/safe-mode/01-shift-restart.png)
+![Shift + Restart option on the Start menu](/assets/img/safe-mode-and-restore-poing/Screenshot%202026-10-25%20091329.png)
 
-![Advanced options screen with Startup Settings](/assets/images/posts/safe-mode/02-advanced-options-startup-settings.png)
+![Advanced options screen with Startup Settings](/assets/img/safe-mode-and-restore-poing/advance-option-with-startup-settings.png)
 
-![Startup Settings list with the Safe Mode options](/assets/images/posts/safe-mode/03-startup-settings-list.png)
+![Startup Settings list with the Safe Mode options](/assets/img/safe-mode-and-restore-poing/startup-settings-with-safe-mode-options.png)
 
 **How do you know you're in Safe Mode?** The screen looks plain. The resolution is low, icons are big, the background is black, and the words "Safe Mode" appear in the corners.
 
-![Safe Mode screen with the corner text visible](/assets/images/posts/safe-mode/04-safe-mode-screen.png)
+![Safe Mode screen with the corner text visible](/assets/img/safe-mode-and-restore-poing/safe-mode-screens.png)
 
 Now test your problem. If it's gone in Safe Mode, the cause is most likely a driver or program you installed. That's useful to know, and it tells you System Restore will probably help.
 
@@ -67,7 +67,7 @@ This is a second way, done from inside Windows.
 3. Under **Boot options**, tick **Safe boot** and choose **Minimal**.
 4. Click **Apply**, then **OK**, then **Restart**.
 
-![msconfig Boot tab with Safe boot and Minimal selected](/assets/images/posts/safe-mode/05-msconfig-safe-boot.png)
+![msconfig Boot tab with Safe boot and Minimal selected](/assets/img/safe-mode-and-restore-poing/safe-mode-with-msconfig.png)
 
 What the options mean:
 
@@ -95,11 +95,11 @@ Windows makes some restore points on its own. But it's smart to make one yoursel
 4. Type a name you'll recognize later, like `Before graphics driver update`, and click **Create**.
 5. Wait for the message that says the restore point was created.
 
-![System Properties, System Protection tab](/assets/images/posts/safe-mode/06-system-protection-tab.png)
+![System Properties, System Protection tab](/assets/img/safe-mode-and-restore-poing/system-protection-tab.png)
 
-![Turning on system protection for drive C](/assets/images/posts/safe-mode/07-turn-on-protection.png)
+![Turning on system protection for drive C](/assets/img/safe-mode-and-restore-poing/turn-on-system-protection.png)
 
-![Naming the new restore point](/assets/images/posts/safe-mode/08-create-restore-point.png)
+![Naming the new restore point](/assets/img/safe-mode-and-restore-poing/restore-point-name.png)
 
 ---
 
@@ -115,17 +115,17 @@ Now the fix itself.
 6. Click **Next**, then **Finish**, then **Yes**.
 7. Your PC will restart and restore itself. **Don't turn it off.** It can take anywhere from 10 to 30 minutes.
 
-![System Restore welcome screen](/assets/images/posts/safe-mode/09-system-restore-start.png)
+![System Restore welcome screen](/assets/img/safe-mode-and-restore-poing/restore-welcom-screen.png)
 
-![List of restore points with dates and descriptions](/assets/images/posts/safe-mode/10-restore-point-list.png)
+![List of restore points with dates and descriptions](/assets/img/safe-mode-and-restore-poing/list-of-restore-point.png)
 
-![Scan for affected programs results](/assets/images/posts/safe-mode/11-affected-programs.png)
+![Scan for affected programs results](/assets/img/safe-mode-and-restore-poing/affected-programs.png)
 
-![Final confirmation before the restore starts](/assets/images/posts/safe-mode/12-restore-confirm.png)
+![Final confirmation before the restore starts](/assets/img/safe-mode-and-restore-poing/restore-confirm.png)
 
 When you sign in again, Windows tells you whether the restore worked.
 
-![System Restore completed message](/assets/images/posts/safe-mode/13-restore-complete.png)
+![System Restore completed message](/assets/img/safe-mode-and-restore-poing/successful-restore-point.png)
 
 **Your personal files stay where they are.** Programs and drivers you installed *after* the restore point will be removed, so you may need to install them again.
 
