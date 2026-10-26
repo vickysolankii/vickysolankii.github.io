@@ -42,7 +42,6 @@ This is the easiest way, and it works when you can still reach the desktop.
    - **5** for Safe Mode with Networking (you get internet, handy for downloading a driver)
    - **6** for Safe Mode with Command Prompt
 
-![Shift + Restart option on the Start menu](/assets/img/safe-mode-and-restore-poing/Screenshot%202026-10-25%20091329.png)
 
 ![Advanced options screen with Startup Settings](/assets/img/safe-mode-and-restore-poing/advance-option-with-startup-settings.png)
 
@@ -119,9 +118,6 @@ Now the fix itself.
 
 ![List of restore points with dates and descriptions](/assets/img/safe-mode-and-restore-poing/list-of-restore-point.png)
 
-![Scan for affected programs results](/assets/img/safe-mode-and-restore-poing/affected-programs.png)
-
-![Final confirmation before the restore starts](/assets/img/safe-mode-and-restore-poing/restore-confirm.png)
 
 When you sign in again, Windows tells you whether the restore worked.
 
