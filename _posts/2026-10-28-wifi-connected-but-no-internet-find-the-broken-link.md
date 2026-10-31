@@ -86,9 +86,6 @@ ipconfig /renew
 
 ![Windows proxy settings turned off](/assets/img/waifi-connect-but-no-internet/proxy-setings.png)
 
-## Root cause
-
-[Write your actual cause here.]
 
 ## Prevention
 
