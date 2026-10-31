@@ -26,7 +26,7 @@ ipconfig
 
 Note the IPv4 Address and Default Gateway. If the address starts with `169.254`, the PC did not get an address from the router (DHCP failure).
 
-![ipconfig output showing IPv4 address and default gateway](/assets/images/wifi-no-internet-01-ipconfig.png)
+![ipconfig output showing IPv4 address and default gateway](/assets/img/waifi-connect-but-no-internet/dhcp-failure.png)
 
 **2. Ping the router**
 
@@ -36,7 +36,7 @@ ping 192.168.1.1
 
 Use your own Default Gateway address. If this fails, the problem is between your PC and the router.
 
-![Ping to the default gateway (router)](/assets/images/wifi-no-internet-02-ping-gateway.png)
+![Ping to the default gateway (router)](/assets/img/waifi-connect-but-no-internet/ping-gateway.jpg)
 
 **3. Ping the internet by number**
 
@@ -46,8 +46,6 @@ ping 8.8.8.8
 
 If this fails but the router ping worked, the router has no internet. Check the ISP.
 
-![Ping to 8.8.8.8 result](/assets/images/wifi-no-internet-03-ping-8888.png)
-
 **4. Ping the internet by name**
 
 ```
@@ -56,7 +54,7 @@ ping google.com
 
 If 8.8.8.8 works and this fails, DNS is the problem.
 
-![Ping to google.com result](/assets/images/wifi-no-internet-04-ping-google.png)
+![Ping to google.com result](/assets/img/waifi-connect-but-no-internet/ping-google.png)
 
 | Router | 8.8.8.8 | google.com | Problem |
 |---|---|---|---|
@@ -69,7 +67,7 @@ If 8.8.8.8 works and this fails, DNS is the problem.
 
 **PC cannot reach the router:** disable and enable the WiFi adapter, forget the network and reconnect, then restart the router (unplug for 30 seconds).
 
-![Disabling and enabling the WiFi adapter](/assets/images/wifi-no-internet-05-adapter-toggle.png)
+![Disabling and enabling the WiFi adapter](/assets/img/waifi-connect-but-no-internet/disable-ethernet-1.png)
 
 **169.254 address:**
 
@@ -78,7 +76,7 @@ ipconfig /release
 ipconfig /renew
 ```
 
-![ipconfig release and renew output](/assets/images/wifi-no-internet-06-release-renew.png)
+![ipconfig release and renew output](/assets/img/waifi-connect-but-no-internet/cmd_ipconfig-renew.png)
 
 **Router has no internet:** check whether other devices are also offline. If yes, restart the router and call your ISP if it stays down.
 
@@ -86,7 +84,7 @@ ipconfig /renew
 
 **Everything pings but the browser fails:** turn off any proxy (Settings > Network & internet > Proxy), disconnect VPN, check the date and time, and open `http://neverssl.com` in case it is a public WiFi login page.
 
-![Windows proxy settings turned off](/assets/images/wifi-no-internet-07-proxy-settings.png)
+![Windows proxy settings turned off](/assets/img/waifi-connect-but-no-internet/proxy-setings.png)
 
 ## Root cause
 
