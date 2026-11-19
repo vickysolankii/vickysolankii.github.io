@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Quick Assist: Fix Any Windows PC Without Leaving Your Desk"
-category: remote-support
+category: setup
 tags:
   - windows
   - quick-assist
