@@ -191,7 +191,7 @@ Remote access is powerful, so it is also what scammers abuse. Fake "tech support
 - **Prefer managed tools** that log who connected, when and to what device.
 - **Document everything.** Date, time, device, what you changed and the result.
 
-![Security warning shown when a session starts](/assets/images/quick-assist/quick-assist-security-warning.png)
+
 
 ---
 
