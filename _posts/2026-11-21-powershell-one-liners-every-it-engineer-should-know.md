@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Automate Your Help Desk: 10 PowerShell One-Liners Every IT Engineer Should Know"
-category: home
+category: setup
 tags:
   - powershell
   - automation
