@@ -46,6 +46,8 @@ These are the ten I reach for most often. Every command here works in Windows Po
 (Get-Date) - (Get-CimInstance Win32_OperatingSystem).LastBootUpTime
 ```
 
+![Uptime and disk space results in PowerShell](/assets/images/powershell-oneliners/powershell-oneliners-uptime.png)
+
 If the result shows 30 days, the user has not restarted. Many "weird" problems disappear after a clean reboot.
 
 ### 2. How much free disk space is left?
@@ -155,7 +157,6 @@ Requirements:
 - You need admin rights on those PCs.
 - On a workgroup (non-domain) network, you may also need to add the targets to TrustedHosts.
 
-![Invoke-Command returning results from a remote session](/assets/images/powershell-oneliners/powershell-oneliners-invoke-command.png)
 
 ---
 
